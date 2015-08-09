@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="Address.cs" />
     <Compile Include="AddressType.cs" />
+    <Compile Include="BusinessException.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Extension.cs" />
     <Compile Include="HandlingMode.cs" />

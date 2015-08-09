@@ -1,5 +1,4 @@
-﻿using System;
-namespace Web.Commerce.Business
+﻿namespace Web.Commerce.Common.Interface
 {
     public interface IRuleEngine<T> where T : class
     {

@@ -1,33 +1,35 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Configuration;
-using System.Linq;
-using System.Text;
+using Web.Commerce.Common.Interface;
 using Web.Commerce.Entity;
 
 namespace Web.Commerce.Business
 {
     public class OrderOperation
     {
+        private readonly IRuleEngine<Order> _ruleExecutor;
+
+        public OrderOperation(IRuleEngine<Order> ruleExecutor)
+        {
+            _ruleExecutor = ruleExecutor;
+        }
+
         public Order CalculateOrderTotal(Order order)
         {
             if (order == null)
             {
-                throw new ArgumentNullException("Order");
+                throw new ArgumentNullException("order");
             }
 
             string errorMessage;
-            if (new RuleEngine<Order>().Execute(
+            if (_ruleExecutor.Execute(
                 ConfigurationManager.AppSettings["RuleFilePath"], 
                 ref order, 
                 out errorMessage))
             {
                 return order;
             }
-            else
-            {
-                throw new BusinessException(errorMessage);
-            }
+            throw new BusinessException(errorMessage);
         }
 
     }

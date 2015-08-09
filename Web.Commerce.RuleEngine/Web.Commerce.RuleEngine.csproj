@@ -1,14 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{A88DA1DF-5089-4606-951C-DD41FC598965}</ProjectGuid>
+    <ProjectGuid>{6CB02448-1B07-4706-8A1A-0F78E04AE9B9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Web.Commerce.Business</RootNamespace>
-    <AssemblyName>Web.Commerce.Business</AssemblyName>
+    <RootNamespace>Web.Commerce.RuleEngine</RootNamespace>
+    <AssemblyName>Web.Commerce.RuleEngine</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -31,7 +31,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Workflow.Activities" />
     <Reference Include="System.Workflow.ComponentModel" />
@@ -42,26 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Extension.cs" />
-    <Compile Include="OrderOperation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RuleEngine.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Web.Commerce.Common.Interface\Web.Commerce.Common.Interface.csproj">
       <Project>{7531bded-488e-4602-a3f1-32fcdf806c35}</Project>
       <Name>Web.Commerce.Common.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Web.Commerce.RuleEngine\Web.Commerce.RuleEngine.csproj">
-      <Project>{6cb02448-1b07-4706-8a1a-0f78e04ae9b9}</Project>
-      <Name>Web.Commerce.RuleEngine</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Web.Commerce\Web.Commerce.Entity.csproj">
       <Project>{e57bd2b7-9a13-4289-9527-cba9cd1d907f}</Project>
       <Name>Web.Commerce.Entity</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="RetailDiscountRules.rules" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

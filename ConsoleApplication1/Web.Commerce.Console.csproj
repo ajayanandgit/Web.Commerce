@@ -21,6 +21,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -51,6 +52,14 @@
     <ProjectReference Include="..\Web.Commerce.Business\Web.Commerce.Business.csproj">
       <Project>{a88da1df-5089-4606-951c-dd41fc598965}</Project>
       <Name>Web.Commerce.Business</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Commerce.Common.Interface\Web.Commerce.Common.Interface.csproj">
+      <Project>{7531bded-488e-4602-a3f1-32fcdf806c35}</Project>
+      <Name>Web.Commerce.Common.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Commerce.RuleEngine\Web.Commerce.RuleEngine.csproj">
+      <Project>{6cb02448-1b07-4706-8a1a-0f78e04ae9b9}</Project>
+      <Name>Web.Commerce.RuleEngine</Name>
     </ProjectReference>
     <ProjectReference Include="..\Web.Commerce\Web.Commerce.Entity.csproj">
       <Project>{e57bd2b7-9a13-4289-9527-cba9cd1d907f}</Project>

@@ -1,10 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Web.Commerce.Business;
 using Web.Commerce.Entity;
+using Web.Commerce.RuleEngine;
 
 namespace Web.Commerce.ConsoleApp
 {
@@ -13,34 +11,34 @@ namespace Web.Commerce.ConsoleApp
         static void Main(string[] args)
         {
             // employee
-            Order order1 = new Order()
+            var order1 = new Order
             {
                 Id = 1,
-                Customer = new Customer() { IsEmployee = true },
+                Customer = new Customer { IsEmployee = true },
                 Items = new List<OrderItem>()
             };
 
-            order1.Items.Add(new OrderItem()
+            order1.Items.Add(new OrderItem
             {
                 BasePricePerItem = 40,
                 Quantity = 1,
                 ItemType = ProductItemType.Apparel
             });
 
-            order1.Items.Add(new OrderItem()
+            order1.Items.Add(new OrderItem
             {
                 BasePricePerItem = 50,
                 Quantity = 1,
                 ItemType = ProductItemType.Grocery
             });
 
-            OrderOperation service = new OrderOperation();
-            var orde = service.CalculateOrderTotal(order1);
+            var service = new OrderOperation(new RuleEngine<Order>());
+            var result = service.CalculateOrderTotal(order1);
 
-            System.Console.WriteLine(orde.TotalGrand);
+            Console.WriteLine(result.TotalGrand);
 
             // Affiliate
-            Order order2 = new Order()
+            var order2 = new Order
             {
                 Id = 1,
                 Customer = new Customer(),
@@ -48,14 +46,14 @@ namespace Web.Commerce.ConsoleApp
                 AffiliateID = "AFF-10"
             };
 
-            order2.Items.Add(new OrderItem()
+            order2.Items.Add(new OrderItem
             {
                 BasePricePerItem = 40,
                 Quantity = 1,
                 ItemType = ProductItemType.Apparel
             });
 
-            order2.Items.Add(new OrderItem()
+            order2.Items.Add(new OrderItem
             {
                 BasePricePerItem = 50,
                 Quantity = 1,
@@ -64,24 +62,24 @@ namespace Web.Commerce.ConsoleApp
 
             var orde2 = service.CalculateOrderTotal(order2);
 
-            System.Console.WriteLine(orde2.TotalGrand);
+            Console.WriteLine(orde2.TotalGrand);
 
             // more than 2 year
-            Order order3 = new Order()
+            var order3 = new Order
             {
                 Id = 1,
-                Customer = new Customer() { RegisteredOnUtc = DateTime.UtcNow.AddYears(3) },
+                Customer = new Customer { RegisteredOnUtc = DateTime.UtcNow.AddYears(3) },
                 Items = new List<OrderItem>()
             };
 
-            order3.Items.Add(new OrderItem()
+            order3.Items.Add(new OrderItem
             {
                 BasePricePerItem = 40,
                 Quantity = 1,
                 ItemType = ProductItemType.Apparel
             });
 
-            order3.Items.Add(new OrderItem()
+            order3.Items.Add(new OrderItem
             {
                 BasePricePerItem = 50,
                 Quantity = 1,
@@ -90,24 +88,24 @@ namespace Web.Commerce.ConsoleApp
 
             var orde3 = service.CalculateOrderTotal(order3);
 
-            System.Console.WriteLine(orde3.TotalGrand);
+            Console.WriteLine(orde3.TotalGrand);
 
             // no discount
-            Order order = new Order()
+            var order = new Order
             {
                 Id = 1,
                 Customer = new Customer(),
                 Items = new List<OrderItem>()
             };
 
-            order.Items.Add(new OrderItem()
+            order.Items.Add(new OrderItem
             {
                 BasePricePerItem = 40,
                 Quantity = 1,
                 ItemType = ProductItemType.Apparel
             });
 
-            order.Items.Add(new OrderItem()
+            order.Items.Add(new OrderItem
             {
                 BasePricePerItem = 50,
                 Quantity = 1,
@@ -116,7 +114,7 @@ namespace Web.Commerce.ConsoleApp
 
             var orde4 = service.CalculateOrderTotal(order);
 
-            System.Console.WriteLine(orde4.TotalGrand);
+            Console.WriteLine(orde4.TotalGrand);
 
             Console.ReadKey();
         }

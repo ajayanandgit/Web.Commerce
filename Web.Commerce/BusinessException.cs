@@ -1,14 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Web.Commerce.Business
+namespace Web.Commerce.Entity
 {
     public class BusinessException : Exception
     {
         public BusinessException(string errorMessage)
-            : base (errorMessage)
+            : base(errorMessage)
         {
         }
 
