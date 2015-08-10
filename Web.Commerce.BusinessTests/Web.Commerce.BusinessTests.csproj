@@ -36,6 +36,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Moq, Version=4.2.1507.118, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.2.1507.0118\lib\net40\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
   </ItemGroup>
   <Choose>
@@ -60,6 +64,21 @@
       <Project>{A88DA1DF-5089-4606-951C-DD41FC598965}</Project>
       <Name>Web.Commerce.Business</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Web.Commerce.Common.Interface\Web.Commerce.Common.Interface.csproj">
+      <Project>{7531bded-488e-4602-a3f1-32fcdf806c35}</Project>
+      <Name>Web.Commerce.Common.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Commerce.RuleEngine\Web.Commerce.RuleEngine.csproj">
+      <Project>{6cb02448-1b07-4706-8a1a-0f78e04ae9b9}</Project>
+      <Name>Web.Commerce.RuleEngine</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Web.Commerce\Web.Commerce.Entity.csproj">
+      <Project>{e57bd2b7-9a13-4289-9527-cba9cd1d907f}</Project>
+      <Name>Web.Commerce.Entity</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

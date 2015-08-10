@@ -29,6 +29,7 @@ namespace Web.Commerce.Entity
         public double OrderDiscount { get; set; }
         public IEnumerator<OrderItem> Enumerator { get; set; }
         public OrderItem CurrentItem { get; set; }
+
         // Calculated Properties                
         public double TotalOrderBeforeDiscounts
         {

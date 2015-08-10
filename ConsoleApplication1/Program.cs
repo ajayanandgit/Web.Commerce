@@ -33,9 +33,9 @@ namespace Web.Commerce.ConsoleApp
             });
 
             var service = new OrderOperation(new RuleEngine<Order>());
-            var result = service.CalculateOrderTotal(order1);
+            var result1 = service.CalculateOrderTotal(order1);
 
-            Console.WriteLine(result.TotalGrand);
+            Console.WriteLine(result1.TotalGrand);
 
             // Affiliate
             var order2 = new Order
@@ -60,9 +60,9 @@ namespace Web.Commerce.ConsoleApp
                 ItemType = ProductItemType.Grocery
             });
 
-            var orde2 = service.CalculateOrderTotal(order2);
+            var result2 = service.CalculateOrderTotal(order2);
 
-            Console.WriteLine(orde2.TotalGrand);
+            Console.WriteLine(result2.TotalGrand);
 
             // more than 2 year
             var order3 = new Order
@@ -86,15 +86,15 @@ namespace Web.Commerce.ConsoleApp
                 ItemType = ProductItemType.Grocery
             });
 
-            var orde3 = service.CalculateOrderTotal(order3);
+            var result3 = service.CalculateOrderTotal(order3);
 
-            Console.WriteLine(orde3.TotalGrand);
+            Console.WriteLine(result3.TotalGrand);
 
             // no discount
             var order = new Order
             {
                 Id = 1,
-                Customer = new Customer(),
+                Customer = new Customer() {RegisteredOnUtc = DateTime.UtcNow.AddYears(1)},
                 Items = new List<OrderItem>()
             };
 
@@ -112,9 +112,10 @@ namespace Web.Commerce.ConsoleApp
                 ItemType = ProductItemType.Grocery
             });
 
-            var orde4 = service.CalculateOrderTotal(order);
+            var result4 = service.CalculateOrderTotal(order);
 
-            Console.WriteLine(orde4.TotalGrand);
+            Console.WriteLine(result4.TotalGrand);
+            
 
             Console.ReadKey();
         }

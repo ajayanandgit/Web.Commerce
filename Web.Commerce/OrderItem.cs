@@ -16,7 +16,7 @@ namespace Web.Commerce.Entity
         public string ProductSku { get; set; }
         public string ProductShortDescription { get; set; }
         public int Quantity { get; set; }
-        public long ShippingSchedule { get; set; }
+        public DateTime ShippingSchedule { get; set; }
         public double ProductShippingWeight { get; set; }
         public double ProductShippingLength { get; set; }
         public double ProductShippingWidth { get; set; }

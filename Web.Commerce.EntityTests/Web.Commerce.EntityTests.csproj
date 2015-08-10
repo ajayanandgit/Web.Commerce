@@ -3,11 +3,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6008B521-D966-4264-B9FA-FBB92644486C}</ProjectGuid>
+    <ProjectGuid>{FDC1154D-AD15-40E0-9A75-264E80F2BF42}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Web.Commerce.RuleEngineTests</RootNamespace>
-    <AssemblyName>Web.Commerce.RuleEngineTests</AssemblyName>
+    <RootNamespace>Web.Commerce.EntityTests</RootNamespace>
+    <AssemblyName>Web.Commerce.EntityTests</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{3AC096D0-A1C2-E12C-1390-A8335801FDAB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -25,7 +25,6 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <CodeAnalysisRuleSet>BasicCorrectnessRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -37,9 +36,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
-    <Reference Include="System.Configuration" />
-    <Reference Include="System.Workflow.Activities" />
-    <Reference Include="System.Workflow.ComponentModel" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -54,25 +50,19 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="AddressTest.cs" />
+    <Compile Include="BusinessExceptionTest.cs" />
+    <Compile Include="CustomerTest.cs" />
+    <Compile Include="ExtensionTests.cs" />
+    <Compile Include="OrderItemTest.cs" />
+    <Compile Include="OrderTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RuleEngineTests.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Web.Commerce.Common.Interface\Web.Commerce.Common.Interface.csproj">
-      <Project>{7531bded-488e-4602-a3f1-32fcdf806c35}</Project>
-      <Name>Web.Commerce.Common.Interface</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Web.Commerce.RuleEngine\Web.Commerce.RuleEngine.csproj">
-      <Project>{6CB02448-1B07-4706-8A1A-0F78E04AE9B9}</Project>
-      <Name>Web.Commerce.RuleEngine</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Web.Commerce\Web.Commerce.Entity.csproj">
-      <Project>{e57bd2b7-9a13-4289-9527-cba9cd1d907f}</Project>
+      <Project>{E57BD2B7-9A13-4289-9527-CBA9CD1D907F}</Project>
       <Name>Web.Commerce.Entity</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

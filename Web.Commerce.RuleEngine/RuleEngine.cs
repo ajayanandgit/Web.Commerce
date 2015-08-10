@@ -28,11 +28,6 @@ namespace Web.Commerce.RuleEngine
                 throw new ArgumentNullException("ruleSetFilePath");
             }
 
-            if (ruleExeObject == null)
-            {
-                throw new ArgumentNullException("ruleExeObject");
-            }
-
             var retVal = false;
             _ruleSet = DeserializeRuleSet(ruleSetFilePath);
             if (_ruleSet != null
@@ -76,7 +71,7 @@ namespace Web.Commerce.RuleEngine
             }
 
             var xmlString = File.ReadAllText(ruleSetFilePath);
-            if (string.IsNullOrEmpty(xmlString)) return null;
+            if (string.IsNullOrEmpty(xmlString)) throw new BusinessException(string.Format("'{0}' file is blank!!", ruleSetFilePath)); ;
             using (var reader = XmlReader.Create(new StringReader(xmlString)))
             {
                 return _serializer.Deserialize(reader) as RuleSet;

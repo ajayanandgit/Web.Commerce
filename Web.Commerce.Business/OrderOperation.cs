@@ -29,6 +29,7 @@ namespace Web.Commerce.Business
             {
                 return order;
             }
+
             throw new BusinessException(errorMessage);
         }
 
