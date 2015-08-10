@@ -43,7 +43,7 @@ namespace Web.Commerce.ConsoleApp
                 Id = 1,
                 Customer = new Customer(),
                 Items = new List<OrderItem>(),
-                AffiliateID = "AFF-10"
+                AffiliateId = "AFF-10"
             };
 
             order2.Items.Add(new OrderItem

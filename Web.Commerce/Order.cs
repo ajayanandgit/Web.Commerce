@@ -18,12 +18,13 @@ namespace Web.Commerce.Entity
         // Addresses
         public Address BillingAddress { get; set; }
         public Address ShippingAddress { get; set; }
+
         // Others
-        public string AffiliateID { get; set; }
+        public string AffiliateId { get; set; }
 
         public bool IsAffiliate
         {
-            get { return string.IsNullOrEmpty(AffiliateID) ? false : true; }
+            get { return string.IsNullOrEmpty(AffiliateId) ? false : true; }
         }
 
         public double OrderDiscount { get; set; }

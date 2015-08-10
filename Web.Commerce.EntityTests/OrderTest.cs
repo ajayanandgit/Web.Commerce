@@ -36,7 +36,7 @@ namespace Web.Commerce.EntityTest
                 IsPlaced = true,
                 BillingAddress = new Address(),
                 ShippingAddress = new Address(),
-                AffiliateID = "test",
+                AffiliateId = "test",
                 OrderDiscount = 3.14159265D
             };
         }
@@ -106,7 +106,7 @@ namespace Web.Commerce.EntityTest
         public void AffiliateIDTest()
         {
             var expected = "test";
-            Assert.AreEqual(expected, _order.AffiliateID, "Web.Commerce.Entity.Order.AffiliateID property test failed");
+            Assert.AreEqual(expected, _order.AffiliateId, "Web.Commerce.Entity.Order.AffiliateID property test failed");
         }
         
         [TestMethod()]

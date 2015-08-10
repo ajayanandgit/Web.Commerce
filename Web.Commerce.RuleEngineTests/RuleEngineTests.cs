@@ -207,7 +207,7 @@ namespace Web.Commerce.RuleEngine.Tests
                 Id = 1,
                 Customer = new Customer (),
                 Items = new List<OrderItem>(),
-                AffiliateID = "AFF-10"
+                AffiliateId = "AFF-10"
             };
 
             order.Items.Add(new OrderItem
@@ -241,7 +241,7 @@ namespace Web.Commerce.RuleEngine.Tests
                 Id = 1,
                 Customer = new Customer (),
                 Items = new List<OrderItem>(),
-                AffiliateID = "AFF-10"
+                AffiliateId = "AFF-10"
             };
 
             order.Items.Add(new OrderItem
@@ -275,7 +275,7 @@ namespace Web.Commerce.RuleEngine.Tests
                 Id = 1,
                 Customer = new Customer { RegisteredOnUtc = DateTime.UtcNow.AddYears(3) },
                 Items = new List<OrderItem>(),
-                AffiliateID = "AFF-10"
+                AffiliateId = "AFF-10"
             };
 
             order.Items.Add(new OrderItem
@@ -309,7 +309,7 @@ namespace Web.Commerce.RuleEngine.Tests
                 Id = 1,
                 Customer = new Customer { RegisteredOnUtc = DateTime.UtcNow.AddYears(3) },
                 Items = new List<OrderItem>(),
-                AffiliateID = "AFF-10"
+                AffiliateId = "AFF-10"
             };
 
             order.Items.Add(new OrderItem

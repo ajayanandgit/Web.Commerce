@@ -7,15 +7,19 @@ namespace Web.Commerce.Entity
         public long Id { get; set; }
         public DateTime LastUpdatedUtc { get; set; }
         public double BasePricePerItem { get; set; }
+        public int Quantity { get; set; }
         public double Discount { get; set; }
         public string OrderId { get; set; }
+
+        // product details
         public string ProductId { get; set; }
         public ProductItemType ItemType { get; set; }
         public string VariantId { get; set; }
         public string ProductName { get; set; }
         public string ProductSku { get; set; }
         public string ProductShortDescription { get; set; }
-        public int Quantity { get; set; }
+
+        // other 
         public DateTime ShippingSchedule { get; set; }
         public double ProductShippingWeight { get; set; }
         public double ProductShippingLength { get; set; }
