@@ -41,7 +41,7 @@ namespace Web.Commerce.RuleEngine
             return retVal;
         }
 
-        private bool IsRuleSetValid(object helpObject)
+        private bool IsRuleSetValid(T helpObject)
         {
             _ruleValidation = new RuleValidation(helpObject.GetType(), null);
             if (_ruleValidation != null
